@@ -7,20 +7,27 @@ public class BasicGun : MonoBehaviour {
 	public GameObject muzzle;
 	public GameObject bulletPrefab;
 	public float bulletForce = 400f;
+	public AudioClip shotSound;
+	public AudioSource audioSource;
 
-	void Start () 
-	{
-		
-	}
-	
+	public float fireCooldownInterval;
+	private float fireCooldown;
+
 	void Update () 
 	{
 		if (Input.GetMouseButton (0))
 		{
-			GameObject bulletInstance = GameObject.Instantiate (bulletPrefab, muzzle.transform.position, Random.rotation) as GameObject;
-			Rigidbody bulletInstanceRBody = bulletInstance.GetComponent<Rigidbody> ();
+			if (Time.time > fireCooldown)
+			{
+				GameObject bulletInstance = GameObject.Instantiate (bulletPrefab, muzzle.transform.position, muzzle.transform.rotation) as GameObject;
+				Rigidbody bulletInstanceRBody = bulletInstance.GetComponent<Rigidbody> ();
 
-			bulletInstanceRBody.AddForce (muzzle.transform.forward * bulletForce);
+				bulletInstanceRBody.AddForce (muzzle.transform.forward * bulletForce);
+
+				fireCooldown = Time.time + fireCooldownInterval;
+
+				audioSource.PlayOneShot (shotSound);
+			}
 		}
 	}
 }

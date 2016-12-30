@@ -13,6 +13,8 @@ public class AxonMovement : MonoBehaviour {
 
 	private Animator axonAnimator;
 
+	private bool dead = false;
+
 	void Start () 
 	{
 		playerTransform = GameObject.Find ("PlayerFeet").transform;
@@ -24,6 +26,11 @@ public class AxonMovement : MonoBehaviour {
 	
 	void Update () 
 	{
+		if (dead == true)
+		{
+			return;
+		}
+
 		axonTransform.LookAt (playerTransform.position);
 
 		float distanceToPlayer = Vector3.Distance (axonTransform.position, playerTransform.position);
@@ -44,7 +51,7 @@ public class AxonMovement : MonoBehaviour {
 			return;
 		}
 
-		print ("Moving");
+		//print ("Moving");
 
 		axonTransform.position = Vector3.MoveTowards (axonTransform.position, playerTransform.position, moveSpeed * Time.deltaTime);
 		axonAnimator.SetBool ("attacking", false);
@@ -52,8 +59,24 @@ public class AxonMovement : MonoBehaviour {
 
 	void Attack()
 	{
-		print ("Attacking");
+		//print ("Attacking");
 
 		axonAnimator.SetBool ("attacking", true);
+
+		BroadcastMessage ("PlayAttackAudio", SendMessageOptions.DontRequireReceiver);
+	}
+
+	public void Die()
+	{
+		print ("dying");
+
+		dead = true;
+
+		axonAnimator.SetBool ("dead", true);
+
+		Rigidbody rbody = GetComponent<Rigidbody> ();
+		Destroy (rbody);
+
+		//transform.rotation = Quaternion.identity;
 	}
 }
