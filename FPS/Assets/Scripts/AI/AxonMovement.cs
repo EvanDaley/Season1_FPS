@@ -15,6 +15,9 @@ public class AxonMovement : MonoBehaviour {
 
 	private bool dead = false;
 
+	public float calculateInterval;
+	private float calculateCooldown;
+
 	void Start () 
 	{
 		playerTransform = GameObject.Find ("PlayerFeet").transform;
@@ -64,6 +67,28 @@ public class AxonMovement : MonoBehaviour {
 		axonAnimator.SetBool ("attacking", true);
 
 		BroadcastMessage ("PlayAttackAudio", SendMessageOptions.DontRequireReceiver);
+
+		if (Time.time > calculateCooldown)
+		{
+			CalculateHit ();
+			calculateCooldown = Time.time + calculateInterval;
+		}
+	}
+
+	void CalculateHit()
+	{
+		float distanceToPlayer = Vector3.Distance (playerTransform.position, axonTransform.position);
+		if (distanceToPlayer < 4)
+		{
+			print ("We hit the player");
+
+			PlayerHealth playerHealth = playerTransform.parent.gameObject.GetComponent<PlayerHealth> ();
+			if (playerHealth != null)
+			{
+				print ("Found player health");
+				playerHealth.TakeDamage (10);
+			}
+		}
 	}
 
 	public void Die()
