@@ -11,11 +11,15 @@ public class AxonMovement : MonoBehaviour {
 	public float moveSpeed = 2f;
 	private float timer1;
 
+	private Animator axonAnimator;
+
 	void Start () 
 	{
 		playerTransform = GameObject.Find ("PlayerFeet").transform;
 		axonTransform = GetComponent<Transform> ();
 		timer1 = Time.time;
+
+		axonAnimator = GetComponent<Animator> ();
 	}
 	
 	void Update () 
@@ -29,7 +33,7 @@ public class AxonMovement : MonoBehaviour {
 			Move (playerTransform.position);
 		} else
 		{
-			Stop ();
+			Attack ();
 		}
 	}
 
@@ -43,10 +47,13 @@ public class AxonMovement : MonoBehaviour {
 		print ("Moving");
 
 		axonTransform.position = Vector3.MoveTowards (axonTransform.position, playerTransform.position, moveSpeed * Time.deltaTime);
+		axonAnimator.SetBool ("attacking", false);
 	}
 
-	void Stop()
+	void Attack()
 	{
-		print ("Stopped");
+		print ("Attacking");
+
+		axonAnimator.SetBool ("attacking", true);
 	}
 }
