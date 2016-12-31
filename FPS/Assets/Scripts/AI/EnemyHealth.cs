@@ -29,15 +29,21 @@ public class EnemyHealth : MonoBehaviour {
 		print (health);
 
 		if (health < 1)
+		{
+			ScoreKeeper.Instance.AddScore (1000);
 			BroadcastMessage ("Die", SendMessageOptions.DontRequireReceiver);
+		}
 	}
 
 	void OnCollisionEnter(Collision collision)
 	{
 		if (collision.gameObject.layer == 9)
 		{
-			if(health > 0)
-				Damage (2);
+			if (health > 0)
+			{
+				Damage (8);
+				ScoreKeeper.Instance.AddScore (10);
+			}
 		}
 	}
 }
