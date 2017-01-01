@@ -20,7 +20,11 @@ public class AxonMovement : MonoBehaviour {
 
 	void Start () 
 	{
-		playerTransform = GameObject.Find ("PlayerFeet").transform;
+		GameObject player = GameObject.Find ("PlayerFeet");
+
+		if(player != null)
+			playerTransform = player.transform;
+
 		axonTransform = GetComponent<Transform> ();
 		timer1 = Time.time;
 
@@ -34,17 +38,21 @@ public class AxonMovement : MonoBehaviour {
 			return;
 		}
 
-		axonTransform.LookAt (playerTransform.position);
-
-		float distanceToPlayer = Vector3.Distance (axonTransform.position, playerTransform.position);
-
-		if (distanceToPlayer > stoppingDistance)
+		if (playerTransform != null)
 		{
-			Move (playerTransform.position);
-		} else
-		{
-			Attack ();
+			axonTransform.LookAt (playerTransform.position);
+
+			float distanceToPlayer = Vector3.Distance (axonTransform.position, playerTransform.position);
+
+			if (distanceToPlayer > stoppingDistance)
+			{
+				Move (playerTransform.position);
+			} else
+			{
+				Attack ();
+			}
 		}
+
 	}
 
 	void Move(Vector3 target)
