@@ -13,8 +13,14 @@ public class BasicGun : MonoBehaviour {
 	public float fireCooldownInterval;
 	private float fireCooldown;
 
+	public GameObject gunPlaceholder;
+	public float slideAmount = .3f;
+	public float recoilAmount = .5f;
+
 	void Update () 
 	{
+		ReturnToCenter ();
+
 		if (Input.GetMouseButton (0))
 		{
 			if (Time.time > fireCooldown)
@@ -27,7 +33,19 @@ public class BasicGun : MonoBehaviour {
 				fireCooldown = Time.time + fireCooldownInterval;
 
 				audioSource.PlayOneShot (shotSound);
+
+				Recoil ();
 			}
 		}
+	}
+
+	void Recoil()
+	{
+		transform.position = transform.position + (-1 * transform.forward * recoilAmount);
+	}
+
+	void ReturnToCenter()
+	{
+		transform.position = Vector3.MoveTowards (transform.position, gunPlaceholder.transform.position, slideAmount * Time.deltaTime);
 	}
 }
