@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BasicGun : MonoBehaviour {
 
@@ -21,6 +22,9 @@ public class BasicGun : MonoBehaviour {
 	public int clipSize = 12;
 	public int clipRemaining;
 
+	public Text currentBullets;
+	public Text maxBullets;
+
 	void Start()
 	{
 		clipRemaining = clipSize;
@@ -29,6 +33,8 @@ public class BasicGun : MonoBehaviour {
 	void Update () 
 	{
 		ReturnToCenter ();
+
+		currentBullets.text = clipRemaining.ToString ();
 
 		if (Input.GetMouseButton (0))
 		{

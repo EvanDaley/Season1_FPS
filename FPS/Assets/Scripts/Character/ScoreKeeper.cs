@@ -23,7 +23,7 @@ public class ScoreKeeper : MonoBehaviour {
 	public void AddScore(int boost)
 	{
 		score += boost;
-		print (score);
+		//print (score);
 
 		if (score > highScore)
 		{
