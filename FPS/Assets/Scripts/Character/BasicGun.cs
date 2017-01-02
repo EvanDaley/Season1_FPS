@@ -72,6 +72,16 @@ public class BasicGun : MonoBehaviour {
 				{
 					// we are not out of bullets
 					clipRemaining -= 1;
+				
+					RaycastHit hit;
+
+					Physics.Raycast (Camera.main.transform.position, Camera.main.transform.forward, out hit);
+
+					float distanceToHit = Vector3.Distance (Camera.main.transform.position, hit.point);
+					if (distanceToHit > 3)
+					{
+						transform.LookAt (hit.point);
+					}
 
 					GameObject bulletInstance = GameObject.Instantiate (bulletPrefab, muzzle.transform.position, muzzle.transform.rotation) as GameObject;
 					Rigidbody bulletInstanceRBody = bulletInstance.GetComponent<Rigidbody> ();
