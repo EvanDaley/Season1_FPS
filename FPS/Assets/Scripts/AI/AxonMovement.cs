@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class AxonMovement : MonoBehaviour {
 
@@ -17,6 +18,8 @@ public class AxonMovement : MonoBehaviour {
 
 	public float calculateInterval;
 	private float calculateCooldown;
+
+	public NavMeshAgent navMeshAgent;
 
 	void Start () 
 	{
@@ -64,7 +67,10 @@ public class AxonMovement : MonoBehaviour {
 
 		//print ("Moving");
 
-		axonTransform.position = Vector3.MoveTowards (axonTransform.position, playerTransform.position, moveSpeed * Time.deltaTime);
+		//axonTransform.position = Vector3.MoveTowards (axonTransform.position, playerTransform.position, moveSpeed * Time.deltaTime);
+
+		navMeshAgent.SetDestination (playerTransform.position);
+
 		axonAnimator.SetBool ("attacking", false);
 	}
 
