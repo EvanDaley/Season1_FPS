@@ -10,6 +10,7 @@ public class BasicGun : MonoBehaviour {
 	public float bulletForce = 400f;
 	public AudioClip shotSound;
 	public AudioClip kickSound;
+	public AudioClip reloadingClip;
 	public AudioSource audioSource;
 
 	public float fireCooldownInterval;
@@ -18,6 +19,10 @@ public class BasicGun : MonoBehaviour {
 	public GameObject gunPlaceholder;
 	public float slideAmount = .3f;
 	public float recoilAmount = .5f;
+
+	public float reloadLength = .8f;
+	public float reloadCooldown;
+	private bool reloading = false;
 
 	public int clipSize = 12;
 	public int clipRemaining;
@@ -34,9 +39,21 @@ public class BasicGun : MonoBehaviour {
 	{
 		ReturnToCenter ();
 
-		currentBullets.text = clipRemaining.ToString ();
+		if (Time.time > reloadCooldown && reloading == true)
+		{
+			reloading = false;
+			clipRemaining = clipSize;
+		}
 
-		if (Input.GetMouseButton (0))
+		currentBullets.text = clipRemaining.ToString ();
+		maxBullets.text = clipSize.ToString ();
+
+		if (Input.GetKey (KeyCode.R) && reloading == false)
+		{
+			Reload ();
+		}
+
+		if (Input.GetMouseButton (0) && reloading == false)
 		{
 			if (Time.time > fireCooldown)
 			{
@@ -67,6 +84,13 @@ public class BasicGun : MonoBehaviour {
 				}
 			}
 		}
+	}
+
+	void Reload()
+	{
+		reloadCooldown = Time.time + reloadLength;
+		reloading = true;
+		audioSource.PlayOneShot (reloadingClip);
 	}
 
 	void Recoil()

@@ -39,6 +39,8 @@ public class EnemyHealth : MonoBehaviour {
 	{
 		if (collision.gameObject.layer == 9)
 		{
+			Destroy (collision.gameObject);
+
 			if (health > 0)
 			{
 				Damage (8);
