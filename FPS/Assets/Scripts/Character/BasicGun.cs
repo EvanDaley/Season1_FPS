@@ -43,6 +43,8 @@ public class BasicGun : MonoBehaviour {
 		{
 			reloading = false;
 			clipRemaining = clipSize;
+
+			ReticleController.Instance.FinishReload ();
 		}
 
 		currentBullets.text = clipRemaining.ToString ();
@@ -91,6 +93,8 @@ public class BasicGun : MonoBehaviour {
 		reloadCooldown = Time.time + reloadLength;
 		reloading = true;
 		audioSource.PlayOneShot (reloadingClip);
+
+		ReticleController.Instance.StartReload ();
 	}
 
 	void Recoil()

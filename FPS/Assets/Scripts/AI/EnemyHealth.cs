@@ -40,6 +40,7 @@ public class EnemyHealth : MonoBehaviour {
 		if (collision.gameObject.layer == 9)
 		{
 			Destroy (collision.gameObject);
+			ReticleController.Instance.Hit ();
 
 			if (health > 0)
 			{
