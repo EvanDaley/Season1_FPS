@@ -8,6 +8,7 @@ public class BasicGun : MonoBehaviour {
 	public GameObject bulletPrefab;
 	public float bulletForce = 400f;
 	public AudioClip shotSound;
+	public AudioClip kickSound;
 	public AudioSource audioSource;
 
 	public float fireCooldownInterval;
@@ -17,6 +18,14 @@ public class BasicGun : MonoBehaviour {
 	public float slideAmount = .3f;
 	public float recoilAmount = .5f;
 
+	public int clipSize = 12;
+	public int clipRemaining;
+
+	void Start()
+	{
+		clipRemaining = clipSize;
+	}
+
 	void Update () 
 	{
 		ReturnToCenter ();
@@ -25,16 +34,31 @@ public class BasicGun : MonoBehaviour {
 		{
 			if (Time.time > fireCooldown)
 			{
-				GameObject bulletInstance = GameObject.Instantiate (bulletPrefab, muzzle.transform.position, muzzle.transform.rotation) as GameObject;
-				Rigidbody bulletInstanceRBody = bulletInstance.GetComponent<Rigidbody> ();
+				if (clipRemaining < 1)
+				{
+					// we are out of bullets
 
-				bulletInstanceRBody.AddForce (muzzle.transform.forward * bulletForce);
+					// clicking sound
+					audioSource.PlayOneShot (kickSound);
 
-				fireCooldown = Time.time + fireCooldownInterval;
+					fireCooldown = Time.time + fireCooldownInterval;
 
-				audioSource.PlayOneShot (shotSound);
+				} else
+				{
+					// we are not out of bullets
+					clipRemaining -= 1;
 
-				Recoil ();
+					GameObject bulletInstance = GameObject.Instantiate (bulletPrefab, muzzle.transform.position, muzzle.transform.rotation) as GameObject;
+					Rigidbody bulletInstanceRBody = bulletInstance.GetComponent<Rigidbody> ();
+
+					bulletInstanceRBody.AddForce (muzzle.transform.forward * bulletForce);
+
+					fireCooldown = Time.time + fireCooldownInterval;
+
+					audioSource.PlayOneShot (shotSound);
+
+					Recoil ();
+				}
 			}
 		}
 	}
