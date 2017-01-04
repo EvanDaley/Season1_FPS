@@ -17,6 +17,9 @@ public class ReticleController : MonoBehaviour {
 
 	public bool reloading = false;
 
+	public AudioClip hitSound;
+	public AudioSource audioSource;
+
 	void Start () 
 	{
 		Instance = this;
@@ -45,6 +48,8 @@ public class ReticleController : MonoBehaviour {
 		reticleImage.sprite = rifleHit;
 
 		resetCooldown = Time.time + resetInterval;
+
+		audioSource.PlayOneShot (hitSound);
 	}
 
 	public void FinishReload()
