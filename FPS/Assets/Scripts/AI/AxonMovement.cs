@@ -36,7 +36,7 @@ public class AxonMovement : MonoBehaviour {
 	
 	void Update () 
 	{
-		if (dead == true)
+		if (dead == true || Time.timeScale == 0)
 		{
 			return;
 		}
@@ -100,7 +100,7 @@ public class AxonMovement : MonoBehaviour {
 			if (playerHealth != null)
 			{
 				print ("Found player health");
-				playerHealth.TakeDamage (10);
+				playerHealth.TakeDamage (110);
 			}
 		}
 	}

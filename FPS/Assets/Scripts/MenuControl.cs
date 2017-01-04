@@ -13,8 +13,11 @@ public class MenuControl : MonoBehaviour {
 	public GameObject Menu;
 	public GameObject reticle;
 
+	public static MenuControl Instance;
+
 	void Start () 
 	{
+		Instance = this;
 		Resume ();
 	}
 	
@@ -23,6 +26,11 @@ public class MenuControl : MonoBehaviour {
 		if (Input.GetKeyDown (KeyCode.Escape))
 		{
 			Pause ();
+		}
+
+		if (SceneManager.GetActiveScene ().buildIndex == 0)
+		{
+			Cursor.visible = true;
 		}
 	}
 
@@ -44,11 +52,14 @@ public class MenuControl : MonoBehaviour {
 
 		Time.timeScale = 1;
 
-		fps.m_MouseLook.SetCursorLock (true);
+		if(fps != null)
+			fps.m_MouseLook.SetCursorLock (true);
 
-		Menu.SetActive (false);
+		if(Menu != null)
+			Menu.SetActive (false);
 
-		reticle.SetActive (true);
+		if(reticle != null)
+			reticle.SetActive (true);
 	}
 
 	public void Pause()
@@ -59,10 +70,13 @@ public class MenuControl : MonoBehaviour {
 
 		Time.timeScale = 0;
 
-		fps.m_MouseLook.SetCursorLock (false);
+		if(fps != null)
+			fps.m_MouseLook.SetCursorLock (false);
 
-		Menu.SetActive (true);
+		if(Menu != null)
+			Menu.SetActive (true);
 
-		reticle.SetActive (false);
+		if(reticle != null)
+			reticle.SetActive (false);
 	}
 }
