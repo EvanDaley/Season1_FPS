@@ -30,9 +30,21 @@ public class EnemyHealth : MonoBehaviour {
 
 		if (health < 1)
 		{
-			ScoreKeeper.Instance.AddScore (1000);
-			BroadcastMessage ("Die", SendMessageOptions.DontRequireReceiver);
+			DieNow ();	
 		}
+	}
+
+	void DieNow()
+	{
+		ScoreKeeper.Instance.AddScore (1000);
+		BroadcastMessage ("Die", SendMessageOptions.DontRequireReceiver);
+		WaveManager.Instance.SignalDeath (this.gameObject);
+		Invoke ("DestroyGameObject", 10f);
+	}
+
+	void DestroyGameObject()
+	{
+		Destroy (gameObject);
 	}
 
 	void OnCollisionEnter(Collision collision)
