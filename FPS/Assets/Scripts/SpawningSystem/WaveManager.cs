@@ -9,10 +9,23 @@ public class WaveManager : MonoBehaviour {
 	public float textInterval = 3f;
 
 	public ArrayList enemyList;
+	public ArrayList spawnPoints;
 
-	void Start()
+	public static WaveManager Instance;
+	public GameObject enemyPrefab;
+
+	void Awake()
 	{
 		Invoke ("StartGame", 3f);
+
+		Instance = this;
+
+		spawnPoints = new ArrayList ();
+	}
+
+	public void RegisterSpawnPoint(SpawnPoint spawnPoint)
+	{
+		spawnPoints.Add (spawnPoint);
 	}
 
 	void StartGame()
@@ -20,26 +33,27 @@ public class WaveManager : MonoBehaviour {
 		ChangeWave (1);
 	}
 
-	void Update () 
-	{
-//		if (Input.GetKeyDown (KeyCode.Q))
-//		{
-//			ChangeWave (i);
-//			i += 1;
-//		}
-	}
-
 	void HideWaveText()
 	{
 		waveLabel.text = "";
 	}
 
+	void SpawnEnemy()
+	{
+		if (spawnPoints.Count > 0)
+		{
+			SpawnPoint sp = spawnPoints [0] as SpawnPoint;
+			GameObject.Instantiate (enemyPrefab, sp.transform.position, sp.transform.rotation);
+		}
+	}
 
 	void ChangeWave(int wave)
 	{
 		if (wave == 1)
 		{
 			waveLabel.text = "WAVE ONE";
+
+			SpawnEnemy ();
 		}
 		else if (wave == 2)
 		{

@@ -8,6 +8,8 @@ public class SpawnPoint : MonoBehaviour {
 	{
 		MeshRenderer renderer = GetComponent<MeshRenderer> ();
 		renderer.enabled = false;
+
+		WaveManager.Instance.RegisterSpawnPoint (this);
 	}
 	
 	void Update () 
