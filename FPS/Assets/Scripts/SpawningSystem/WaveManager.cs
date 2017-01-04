@@ -6,13 +6,20 @@ using UnityEngine.UI;
 public class WaveManager : MonoBehaviour {
 
 	public Text waveLabel;
-	public float textInterval = 1f;
+	public float textInterval = 3f;
 
-	void Start () 
+	public ArrayList enemyList;
+
+	void Start()
 	{
-		
+		Invoke ("StartGame", 3f);
 	}
-	
+
+	void StartGame()
+	{
+		ChangeWave (1);
+	}
+
 	void Update () 
 	{
 //		if (Input.GetKeyDown (KeyCode.Q))
@@ -26,6 +33,7 @@ public class WaveManager : MonoBehaviour {
 	{
 		waveLabel.text = "";
 	}
+
 
 	void ChangeWave(int wave)
 	{

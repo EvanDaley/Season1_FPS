@@ -11,6 +11,7 @@ public class MenuControl : MonoBehaviour {
 	public FirstPersonController fps;
 
 	public GameObject Menu;
+	public GameObject reticle;
 
 	void Start () 
 	{
@@ -46,6 +47,8 @@ public class MenuControl : MonoBehaviour {
 		fps.m_MouseLook.SetCursorLock (true);
 
 		Menu.SetActive (false);
+
+		reticle.SetActive (true);
 	}
 
 	public void Pause()
@@ -59,5 +62,7 @@ public class MenuControl : MonoBehaviour {
 		fps.m_MouseLook.SetCursorLock (false);
 
 		Menu.SetActive (true);
+
+		reticle.SetActive (false);
 	}
 }

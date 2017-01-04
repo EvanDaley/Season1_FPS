@@ -55,7 +55,7 @@ public class BasicGun : MonoBehaviour {
 			Reload ();
 		}
 
-		if (Input.GetMouseButton (0) && reloading == false)
+		if (Input.GetMouseButton (0) && reloading == false && Time.timeScale != 0)
 		{
 			if (Time.time > fireCooldown)
 			{
