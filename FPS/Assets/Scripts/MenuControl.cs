@@ -31,6 +31,7 @@ public class MenuControl : MonoBehaviour {
 		if (SceneManager.GetActiveScene ().buildIndex == 0)
 		{
 			Cursor.visible = true;
+			Cursor.lockState = CursorLockMode.None;
 		}
 	}
 
