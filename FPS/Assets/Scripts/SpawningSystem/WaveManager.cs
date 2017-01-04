@@ -42,8 +42,22 @@ public class WaveManager : MonoBehaviour {
 	{
 		if (spawnPoints.Count > 0)
 		{
-			SpawnPoint sp = spawnPoints [0] as SpawnPoint;
-			GameObject.Instantiate (enemyPrefab, sp.transform.position, sp.transform.rotation);
+			int r = Random.Range (0, spawnPoints.Count - 1);
+			SpawnPoint sp = spawnPoints [r] as SpawnPoint;
+			if (sp.CheckClear ())
+			{
+				GameObject.Instantiate (enemyPrefab, sp.transform.position, sp.transform.rotation);
+			}
+
+			while (sp.CheckClear () == false)
+			{
+				r = Random.Range (0, spawnPoints.Count - 1);
+				sp = spawnPoints [r] as SpawnPoint;
+				if (sp.CheckClear ())
+				{
+					GameObject.Instantiate (enemyPrefab, sp.transform.position, sp.transform.rotation);
+				}
+			}
 		}
 	}
 
@@ -53,6 +67,7 @@ public class WaveManager : MonoBehaviour {
 		{
 			waveLabel.text = "WAVE ONE";
 
+			SpawnEnemy ();
 			SpawnEnemy ();
 		}
 		else if (wave == 2)

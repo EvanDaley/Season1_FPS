@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class SpawnPoint : MonoBehaviour {
 
+	public float cooldown;
+	public float spawnInterval = 1f;
+
 	void Start () 
 	{
 		MeshRenderer renderer = GetComponent<MeshRenderer> ();
@@ -15,6 +18,18 @@ public class SpawnPoint : MonoBehaviour {
 	void Update () 
 	{
 		
+	}
+
+	public bool CheckClear()
+	{
+		if (Time.time > cooldown)
+		{
+			return true;
+		}
+
+		cooldown = Time.time + spawnInterval;
+
+		return false;
 	}
 
 
