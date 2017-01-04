@@ -19,14 +19,14 @@ Platform assembly: C:\Users\daley\Documents\GitHub\Season1_FPS\FPS\Build1_Data\M
 Loading C:\Users\daley\Documents\GitHub\Season1_FPS\FPS\Build1_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
 Platform assembly: C:\Users\daley\Documents\GitHub\Season1_FPS\FPS\Build1_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll (this message is harmless)
 Loading C:\Users\daley\Documents\GitHub\Season1_FPS\FPS\Build1_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
-- Completed reload, in  0.022 seconds
+- Completed reload, in  0.026 seconds
 Platform assembly: C:\Users\daley\Documents\GitHub\Season1_FPS\FPS\Build1_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\daley\Documents\GitHub\Season1_FPS\FPS\Build1_Data\Managed\System.dll (this message is harmless)
 desktop: 1920x1080 60Hz; virtual: 3600x1080 at -1680,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 3.787479 ms
+UnloadTime: 1.161887 ms
 Failed to create agent because there is no valid NavMesh
  
 (Filename:  Line: 498)
@@ -36,12 +36,12 @@ Game started, we loaded a highscore of: 1500
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 Setting up 1 worker threads for Enlighten.
-  Thread -> id: 17e8 -> priority: 1 
+  Thread -> id: 2328 -> priority: 1 
 Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 12.698800 ms
+UnloadTime: 7.180051 ms
 
 Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 769.
-Total: 0.633490 ms (FindLiveObjects: 0.040105 ms CreateObjectMapping: 0.030152 ms MarkObjects: 0.215749 ms  DeleteObjects: 0.335773 ms)
+Total: 0.925938 ms (FindLiveObjects: 0.070843 ms CreateObjectMapping: 0.050936 ms MarkObjects: 0.347483 ms  DeleteObjects: 0.455797 ms)
 
 Game started, we loaded a highscore of: 1500
  
@@ -99,291 +99,39 @@ HIT
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-HIT
+We hit the player
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-HIT
+Found player health
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-HIT
+90
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-HIT
+We hit the player
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-HIT
+Found player health
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-HIT
+80
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-HIT
+We hit the player
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-HIT
+Found player health
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-HIT
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-HIT
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-HIT
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-HIT
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-HIT
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-HIT
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-HIT
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-HIT
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-HIT
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-HIT
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-HIT
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-HIT
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-HIT
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-HIT
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-HIT
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-HIT
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-HIT
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-HIT
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-HIT
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-HIT
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-HIT
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-HIT
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-HIT
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-HIT
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-HIT
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-HIT
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-HIT
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-HIT
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-HIT
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-dying
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-HIT
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-HIT
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-HIT
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-HIT
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-HIT
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-HIT
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-HIT
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-HIT
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-HIT
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-HIT
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-HIT
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-HIT
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-HIT
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-HIT
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-HIT
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-HIT
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-HIT
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-HIT
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-HIT
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-HIT
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-HIT
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-HIT
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-HIT
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-HIT
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-HIT
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-HIT
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-HIT
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-HIT
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-HIT
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-HIT
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-HIT
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-HIT
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-HIT
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-HIT
+70
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
