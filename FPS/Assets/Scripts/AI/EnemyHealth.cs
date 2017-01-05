@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour {
 
 	public int health = 400;
+	public GameObject bloodSplatter;
 
 	void Start () 
 	{
@@ -53,6 +54,8 @@ public class EnemyHealth : MonoBehaviour {
 		{
 			Destroy (collision.gameObject);
 			ReticleController.Instance.Hit ();
+
+			GameObject.Instantiate(bloodSplatter, collision.contacts[0].point, Quaternion.identity);
 
 			if (health > 0)
 			{
