@@ -47,7 +47,7 @@ public class MenuControl : MonoBehaviour {
 
 	public void Resume()
 	{
-		print ("Resume");
+		//print ("Resume");
 
 		isPaused = false;
 
@@ -65,7 +65,7 @@ public class MenuControl : MonoBehaviour {
 
 	public void Pause()
 	{
-		print ("Paused");
+		//print ("Paused");
 
 		isPaused = true;
 
